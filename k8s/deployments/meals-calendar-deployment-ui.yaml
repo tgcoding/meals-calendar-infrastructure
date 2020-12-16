@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meals-calendar-ui-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: meals-calendar-ui
+  template:
+    metadata:
+      labels:
+        run: meals-calendar-ui
+    spec:
+      containers:
+      - name: meals-calendar-ui
+        image: repo.treescale.com/tgcoding/meals-calendar-ui:0.0.1-808cdf47507cbb34ed113a29b038ba6398807e2f
+        ports:
+          - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+      imagePullSecrets:
+      - name: tree-scale-secret
