@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: meals-calendar-ingress
@@ -10,3 +10,7 @@ spec:
         backend:
           serviceName: meals-calendar-deployment-svc
           servicePort: 8080
+      - path: /meals-calendar/
+        backend:
+          serviceName: meals-calendar-ui-deployment-svc
+          servicePort: 80
