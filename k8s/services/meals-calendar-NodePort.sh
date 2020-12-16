@@ -1,0 +1,1 @@
+kubectl expose deployment meals-calendar-deployment --target-port=8080 --type=NodePort --name=meals-calendar-deployment-svc

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: meals-calendar-config
+  namespace: default
+data:
+  DB_URL: DB_URL_VALUE_HERE
+  DB_USER: DB_USER_VALUE_HERE
+  DB_PASS: DB_PASS_VALUE_HERE
